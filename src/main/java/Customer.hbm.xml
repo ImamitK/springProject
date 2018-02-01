@@ -1,0 +1,14 @@
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"> 
+
+<hibernate-mapping>
+	<class name="com.kaushik.spring.springProject.springHibernate.Customer" table="CUSTOMERS">
+		<id name="cno" column="CNO" type="integer">
+			<generator class="assigned"/>
+		</id>
+		<property name="cname" column="CNAME" type="string" length="20"/>
+		<property name="address" column="ADDRESS" type="string" length="100"/>
+		<property name="phone" column="PHONE" type="long"/>
+	</class>
+</hibernate-mapping>

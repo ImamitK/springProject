@@ -1,0 +1,35 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+   http://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+	<!-- Auto-wiring byName example -->
+	<bean id="application" class="com.kaushik.spring.springProject.Autowiring.XML.Application" autowire="byName"/>
+	<bean id="applicationUser" class="com.kaushik.spring.springProject.Autowiring.XML.ApplicationUser">
+		<property name="name" value="superUser"></property>
+	</bean>
+	
+	<!-- Auto-wiring ByType example -->
+	<bean id="employee" class="com.kaushik.spring.springProject.Autowiring.XML.Employee" autowire="byType"/>
+	<bean id="employeeAddress" class="com.kaushik.spring.springProject.Autowiring.XML.EmployeeAddress">
+		<property name="street" value="#664,HSR Layout"/>
+		<property name="city" value="Bangalore"/>
+	</bean>
+	
+	<!-- Auto-wiring By constructor example -->
+	<bean id="performer" class="com.kaushik.spring.springProject.Autowiring.XML.Performer" autowire="constructor"/>
+	<bean id="instrument" class="com.kaushik.spring.springProject.Autowiring.XML.Instrument">
+		<property name="name" value="PIANO"/>
+	</bean>
+	
+	<!-- Auto-wiring = no example -->
+	<bean id="driver" class="com.kaushik.spring.springProject.Autowiring.XML.Driver">
+		<property name="license" ref="license"></property>
+	</bean>
+	<bean id="license" class="com.kaushik.spring.springProject.Autowiring.XML.License">
+		<property name="number" value="KA05JX6565"></property>
+	</bean>
+
+</beans> 
